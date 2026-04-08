@@ -1,3 +1,5 @@
+//Cyut54is a356good 72school 
+//Ne125ver 56give22 66up
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -9,15 +11,12 @@ using namespace std;
 int main() {
     ifstream file("d.txt");
     if (!file) return 0;
-
     string line;
     long long totalSum = 0;
     vector<string> allLines;
-
     while (getline(file, line)) {
         allLines.push_back(line);
         string temp = "";
-        
         for (int i = 0; i < (int)line.length(); i++) {
             if (isdigit(line[i])) {
                 temp += line[i];
@@ -28,7 +27,6 @@ int main() {
         }
         if (!temp.empty()) totalSum += atoll(temp.c_str());
     }
-
     for (int i = 0; i < (int)allLines.size(); i++) {
         cout << allLines[i] << endl;
     }
