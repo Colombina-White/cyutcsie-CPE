@@ -1,3 +1,4 @@
+//質因數
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -10,7 +11,6 @@ int main() {
     long long n, temp;
     if (!(file >> n)) return 0;
     temp = n;
-
     string res = "";
     for (int i = 2; i * i <= n; i++) {
         if (n % i == 0) {
@@ -24,13 +24,11 @@ int main() {
             res = ss.str();
         }
     }
-    
     if (n > 1) {
         stringstream ss;
         ss << n << "(1)" << res;
         res = ss.str();
     }
-
     cout << temp << "\nAns=" << res << endl;
     return 0;
 }
