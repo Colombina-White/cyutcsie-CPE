@@ -1,3 +1,4 @@
+//輸出最小的子數列長度
 #include <iostream>
 #include <fstream>
 #include <vector>
