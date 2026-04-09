@@ -1,3 +1,4 @@
+//圓周率的無窮乘積計算式
 #include <iostream>
 #include <fstream>
 #include <vector>
