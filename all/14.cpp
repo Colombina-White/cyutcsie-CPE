@@ -1,3 +1,4 @@
+//異常值
 #include <iostream>
 #include <fstream>
 #include <vector>
