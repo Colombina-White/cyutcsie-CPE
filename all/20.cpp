@@ -1,3 +1,4 @@
+//部分序列字串指原字串中刪掉一個以上字元且不改變原順序的部份字串。 
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -5,7 +6,7 @@
 using namespace std;
 
 int main() {
-    ifstream f("e.txt");
+    ifstream f("d.txt");
     string s1, s2, del = "";
     if (!(f >> s1 >> s2)) return 0;
 
