@@ -1,3 +1,4 @@
+//星號字元的長方形 
 #include <iostream>
 #include <fstream>
 #include <string>
