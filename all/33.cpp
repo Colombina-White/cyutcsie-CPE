@@ -1,3 +1,4 @@
+//字串加密 
 #include <iostream>
 #include <fstream>
 #include <string>
