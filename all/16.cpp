@@ -1,3 +1,5 @@
+/*請撰寫一個程式從檔案e.txt中讀入二個正整數n與k(n100000000)，接著輸出0~n
+的數值中，每個數字總合為k的個數。*/ 
 #include <iostream>
 #include <fstream>
 
