@@ -1,3 +1,4 @@
+//雞兔同籠
 #include <iostream>
 #include <fstream>
 
