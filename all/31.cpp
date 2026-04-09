@@ -1,3 +1,4 @@
+//卡片號碼是否造假 
 #include <iostream>
 #include <fstream>
 #include <vector>
