@@ -1,3 +1,4 @@
+//兩個數字x及n後計算下面運算式的結果
 #include <iostream>
 #include <fstream>
 
