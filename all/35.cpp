@@ -1,3 +1,4 @@
+//平方和重複循環長度
 #include <iostream>
 #include <fstream>
 
