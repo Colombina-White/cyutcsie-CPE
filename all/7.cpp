@@ -50,7 +50,7 @@ long long get_gcd(long long a, long long b) {
 }
 
 int main() {
-    ifstream f("7.txt");
+    ifstream f("c.txt");
     long long val, res = 0;
     bool first = true;
     while (f >> val) {
