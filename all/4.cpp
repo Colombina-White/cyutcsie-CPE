@@ -27,3 +27,30 @@ int main() {
     cout << expr << finalRes << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("4.txt");
+    double res, next;
+    char op;
+
+    if (!(f >> res)) return 0;
+    cout << res;
+    while (f >> op) {
+        cout << op; 
+        if (op == '=') break;
+        f >> next;
+        cout << next; 
+        if (op == '+') res += next;
+        else if (op == '-') res -= next;
+        else if (op == '*') res *= next;
+        else if (op == '/' && next != 0) res /= next;
+    }
+    cout << (int)(res + 0.5) << endl;
+
+    return 0;
+}
