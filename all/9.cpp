@@ -54,7 +54,7 @@ int main() {
 using namespace std;
 
 int main() {
-    ifstream f("9.txt");
+    ifstream f("e.txt");
     int val, k, prev, count = 0;
     bool first = true;
     while (f >> val) {
