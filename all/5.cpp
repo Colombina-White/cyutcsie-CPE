@@ -34,3 +34,36 @@ int main() {
 
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("d.txt");
+    if (!f) return 0;
+    char c;
+    long long total = 0, num = 0;
+    bool has_num = false;
+
+    while (f.get(c)) {
+        cout << c; 
+
+        if (c >= '0' && c <= '9') {
+            num = num * 10 + (c - '0');
+            has_num = true;
+        } else {
+            if (has_num) {
+                total += num;
+                num = 0;
+                has_num = false;
+            }
+        }
+    }
+    if (has_num) total += num;
+
+    cout << "\nAns=" << total << endl;
+
+    return 0;
+}
