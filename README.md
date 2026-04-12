@@ -3,7 +3,7 @@
 
 在開始練習前，請參考以下常見問題與建議配置：
 
-1. 關於亂碼問題 (Encoding)
+# 1. 關於亂碼問題 (Encoding)
 
 現象：如你提供的截圖所示，Dev-C++ 或終端機出現 `` 或問號。
 
@@ -15,61 +15,61 @@
 
 程式端：在 Windows 執行時，可在 main 開頭加入 system("chcp 65001"); 強制使用 UTF-8。
 
-2. 關於讀檔方式對比
+# 2. 關於讀檔方式對比
 
 fstream (建議)：適合讀取 C++ 的 string 物件，能自動將流中的字串轉換為數值（如 123 轉為整數）。
 
 fscanf / stdio.h：當需要讀取格式化的 C 字元陣列 (char[]) 時較建議使用，但需注意格式化符號 % 必須與變數類型相符。
 
-10 個練習檔案詳細解說
+# 10 個練習檔案詳細解說
 
-1.cpp - 迴文排列 (Palindrome Permutation)
+# 1.cpp - 迴文排列 (Palindrome Permutation)
 
 核心邏輯：將字串切為前半段，利用 next_permutation 找尋下一個排列，再鏡像生成後半段。
 
 關鍵點：使用 substr 取得子字串，並用 reverse 處理對稱部分。
 
-2.cpp - 質因數分解 (Prime Factorization)
+# 2.cpp - 質因數分解 (Prime Factorization)
 核心邏輯：使用遞迴與 while 迴圈找出數字 n 的所有質因子及其出現次數。
 
 實作注意：判斷條件為 i * i <= n，這能大幅提升大數字分解的效率。
 
-3.cpp - AL 字串刪除 (String Manipulation)
+# 3.cpp - AL 字串刪除 (String Manipulation)
 核心邏輯：手寫字串處理。從後往前掃描，尋找 A 並刪除直到遇到下一個 L 為止。
 
 技巧：不使用 <string> 函式，直接操作 char 陣列進行字元遞補與結束符號 \0 的設置。
 
-4.cpp - 簡易計算機 (Arithmetic Expression)
+# 4.cpp - 簡易計算機 (Arithmetic Expression)
 核心邏輯：串流處理。邊讀取運算子 (+, -, *, /) 與數字，邊即時累算結果。
 
 注意：最後結果加上 0.5 並轉型為 int，實現基礎的四捨五入功能。
 
-5.cpp - 雜亂文字中的數字加總 (Digit Extraction)
+# 5.cpp - 雜亂文字中的數字加總 (Digit Extraction)
 核心邏輯：利用 f.get(c) 逐字讀取，判斷 c >= '0' && c <= '9' 來拼接數字並累加。
 
 關鍵：設有 has_num 旗標，確保非數字字元出現時能正確結算前一串數字。
 
-6.cpp - 最大子陣列和 (Kadane's Algorithm)
+# 6.cpp - 最大子陣列和 (Kadane's Algorithm)
 核心邏輯：找出連續整數相加後的最大值。若當前數值大於「累計和+當前值」，則重新開始計算。
 
 優點：不使用 vector 儲存，僅需一次掃描 (One-pass) 即可得出結果。
 
-7.cpp - 最小公倍數 (LCM)
+# 7.cpp - 最小公倍數 (LCM)
 核心邏輯：利用「兩數乘積 / 最大公因數」求得 LCM。最大公因數採輾轉相除法實作。
 
 溢位防止：計算公式採 (res / gcd) * val，先除再乘可降低數值超出 long long 範圍的風險。
 
-8.cpp - 字元行程編碼 (RLE Encoding)
+# 8.cpp - 字元行程編碼 (RLE Encoding)
 核心邏輯：統計連續相同字元的數量，並在該字元前加上十六進位 (hex) 的數量標記。
 
 語法：使用 cout << hex; 切換輸出模式，將十進位計數轉為十六進位顯示。
 
-9.cpp - 數值內插法 (Linear Interpolation)
+# 9.cpp - 數值內插法 (Linear Interpolation)
 核心邏輯：在每隔 k 個數字的位置插入一個「前值與現值」的平均數。
 
 實作注意：由於 k 通常在檔案末端，程式先將數字存入 nums[1000] 陣列後再進行二次處理。
 
-10.cpp - 炸彈安全區計算 (Bomb Safety Check)
+# 10.cpp - 炸彈安全區計算 (Bomb Safety Check)
 核心邏輯：使用 safe 陣列標記地圖。遇到 x (範圍1) 或 X (範圍2) 時，將周圍範圍標記為 0。
 
 統計：最後只計算原本為 '0' 且標記為安全 (1) 的位置數量。
