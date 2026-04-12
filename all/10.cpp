@@ -39,7 +39,7 @@ int main() {
 using namespace std;
 
 int main() {
-    ifstream f("10.txt");
+    ifstream f("d.txt");
     char s[1000], safe[1000];
     if (!(f >> s)) return 0;
     int n = 0;
