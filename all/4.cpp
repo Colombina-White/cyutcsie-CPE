@@ -34,7 +34,7 @@ int main() {
 using namespace std;
 
 int main() {
-    ifstream f("4.txt");
+    ifstream f("c.txt");
     double res, next;
     char op;
 
