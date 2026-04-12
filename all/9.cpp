@@ -47,3 +47,38 @@ int main() {
 
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("9.txt");
+    int val, k, prev, count = 0;
+    bool first = true;
+    while (f >> val) {
+        break; 
+    }
+    
+    int nums[1000], n = 0;
+    f.clear(); f.seekg(0); 
+    
+    while (f.peek() != '\n' && f >> val) {
+        nums[n++] = val;
+        cout << val << (f.peek() == '\n' ? "" : " ");
+    }
+    
+    if (!(f >> k)) k = 0;
+    cout << "\n" << k << "\nAns=";
+
+    for (int i = 0; i < n; i++) {
+        if (k > 0 && i > 0 && i % k == 0) {
+            cout << (nums[i-1] + nums[i] + 1) / 2 << " ";
+        }
+        cout << nums[i] << (i == n - 1 ? "" : " ");
+    }
+    cout << endl;
+
+    return 0;
+}
