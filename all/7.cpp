@@ -33,3 +33,40 @@ int main() {
     cout << "Ans=" << res << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+long long get_gcd(long long a, long long b) {
+    while (b) {
+        a %= b;
+        long long t = a;
+        a = b;
+        b = t;
+    }
+    return a;
+}
+
+int main() {
+    ifstream f("7.txt");
+    long long val, res = 0;
+    bool first = true;
+    while (f >> val) {
+        if (!first) cout << " ";
+        cout << val;
+
+        if (first) {
+            res = val;
+            first = false;
+        } else {
+            if (res > 0 && val > 0) {
+                res = (res / get_gcd(res, val)) * val;
+            }
+        }
+    }
+    if (first) return 0; 
+    cout << "\nAns=" << res << endl;
+    return 0;
+}
