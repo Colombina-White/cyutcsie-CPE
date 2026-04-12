@@ -32,3 +32,34 @@ int main() {
     cout << s << "\nAns=" << ans << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("10.txt");
+    char s[1000], safe[1000];
+    if (!(f >> s)) return 0;
+    int n = 0;
+    while (s[n]) {
+        safe[n] = 1; 
+        n++;
+    }
+    for (int i = 0; i < n; i++) {
+        int d = (s[i] == 'x' ? 1 : (s[i] == 'X' ? 2 : 0));
+        
+        if (d > 0) {
+            for (int j = i - d; j <= i + d; j++) {
+                if (j >= 0 && j < n) safe[j] = 0;
+            }
+        }
+    }
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        if (s[i] == '0' && safe[i]) ans++;
+    }
+    cout << s << "\nAns=" << ans << endl;
+    return 0;
+}
