@@ -31,7 +31,7 @@ int main() {
 using namespace std;
 
 int main() {
-    ifstream f("3.txt");
+    ifstream f("b.txt");
     char s[1000];
     if (!(f.getline(s, 1000))) return 0;
     cout << s << endl;
