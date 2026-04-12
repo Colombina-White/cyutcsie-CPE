@@ -31,7 +31,7 @@ int main() {
 using namespace std;
 
 int main() {
-    ifstream f("6.txt");
+    ifstream f("e.txt");
     int val, first = 1;
     long long maxSum, curSum;
 
