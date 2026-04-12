@@ -24,3 +24,32 @@ int main() {
     cout << "Ans=" << maxSum << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("6.txt");
+    int val, first = 1;
+    long long maxSum, curSum;
+
+    while (f >> val) {
+        if (!first) cout << " ";
+        cout << val;
+
+        if (first) {
+            maxSum = curSum = val;
+            first = 0;
+        } else {
+            if (val > curSum + val) curSum = val;
+            else curSum += val;
+            if (curSum > maxSum) maxSum = curSum;
+        }
+    }
+
+    if (first) return 0;
+    cout << "\nAns=" << maxSum << endl;
+    return 0;
+}
