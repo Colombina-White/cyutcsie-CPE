@@ -3,7 +3,17 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
+/*取前半段 (L)：
+假設字串長度為 len，程式先切出前一半的字元存入 L。
 
+找下一個排列 (next_permutation)：
+它會將 L 改成「字典順序」中的下一個組合。
+
+鏡像對稱 (R)：
+如果 L 成功找到了下一個排列，程式會將新的 L 反轉（reverse）得到 R，作為後半段。
+
+組合結果：
+將新的 L + 中間項 (mid) + R 拼起來。*/
 using namespace std;
 
 int main() {
