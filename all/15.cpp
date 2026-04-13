@@ -18,14 +18,14 @@ int main() {
 
     cout << id << endl;
 
-    int n = getLetterVal(id[0]);
-    int sum = (n / 10) + (n % 10) * 9;
+    int n = getLetterVal(id[0]);//英文字
+    int sum = (n / 10) + (n % 10) * 9;//英文轉的數字
 
     for (int i = 1; i <= 8; i++) {
-        sum += (id[i] - '0') * (9 - i);
+        sum += (id[i] - '0') * (9 - i);//加權累加
     }
 
-    int checkNum = (10 - (sum % 10)) % 10;
+    int checkNum = (10 - (sum % 10)) % 10;//計算檢查碼
 
     cout << "Ans=" << id << checkNum << endl;
 
