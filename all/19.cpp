@@ -1,4 +1,11 @@
 //三個字串的運算符號 
+/*指令解析：使用 isdigit() 配合 while 迴圈提取符號後的數字 n。
+reverse() 與 substr()：
+s.substr(i, n)：抓取接下來的 n 個字元。
+reverse(t.begin(), t.end())：直接將抓取的字串反轉。
+res.erase()：
+@ 指令：res.erase(0, del) 從位置 0（開頭）開始刪除。
+% 指令：res.erase(len - del, del) 從末尾往前算 del 個位置開始刪除。*/
 #include <iostream>
 #include <fstream>
 #include <string>
