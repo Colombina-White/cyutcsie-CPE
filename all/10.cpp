@@ -5,6 +5,9 @@
 接著輸出炸彈爆炸後還剩下幾個0。 
 範例輸入一： 
 00x00000X0xX0000x*/
+/*使用 string 與 vector<int>：這是比較現代的寫法，優點是記憶體管理自動化，且 s.length() 呼叫非常方便。
+
+三元運算子：dist = (s[i] == 'x' ? 1 : (s[i] == 'X' ? 2 : 0)) 簡潔地處理了多種條件判斷。*/
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -33,6 +36,11 @@ int main() {
     return 0;
 }
 //不用函示
+/*字元陣列 char s[1000]。雖然題目說最長 80 個字元，但這裡開到 1000 確保安全。
+
+手動計算長度：利用 while (s[n]) 遍歷到字串結束符 \0 來計算長度 n 並初始化 safe 陣列。
+
+邏輯一致性：其餘爆炸模擬邏輯與第一段完全相同。*/
 #include <iostream>
 #include <fstream>
 
