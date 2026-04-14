@@ -27,3 +27,36 @@ int main() {
     cout << "Ans=" << X % N << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("12.txt");
+    int p[100], r[100]; 
+    int n = 0;         
+    while (f >> p[n] >> r[n]) {
+        cout << p[n] << " " << r[n] << " ";
+        n++;
+    }
+    cout << endl;
+    if (n == 0) return 0;
+    long long N = 1;
+    for (int i = 0; i < n; i++) {
+        N *= p[i];
+    }
+    long long X = 0;
+    for (int i = 0; i < n; i++) {
+        long long Mi = N / p[i];
+        int yi = 1;
+        while ((Mi * yi) % p[i] != 1) {
+            yi++;
+        }
+        X += Mi * yi * r[i];
+    }
+    cout << "Ans=" << X % N << endl;
+
+    return 0;
+}
