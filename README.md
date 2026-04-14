@@ -158,9 +158,9 @@ $$\sigma^2 = \frac{\sum (x_i - \mu)^2}{n}$$
 
 判定條件：
 
-第一段判定：$|x_i - \mu| > \sigma$
+第一段判定： $|x_i - \mu| > \sigma$
 
-第二段判定：$(x_i - \mu)^2 > \sigma^2$
+第二段判定： $(x_i - \mu)^2 > \sigma^2$
 
 數學上這兩者是等價的。
 # PDF對照cpp檔案為1>1.cpp
