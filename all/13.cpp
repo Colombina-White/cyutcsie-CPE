@@ -28,3 +28,30 @@ int main() {
     cout << "Ans=" << sum << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    ifstream f("13.txt");
+    string s;
+    int len;
+    if (!(f >> s >> len)) return 0;
+    cout << s << "\n" << len << endl;
+
+    long long totalSum = 0;
+    int n = s.length();
+    for (int i = 0; i < n; i += len) {
+        long long currentNum = 0;
+        
+        for (int j = i; j < i + len && j < n; j++) {
+            currentNum = currentNum * 10 + (s[j] - '0');
+        }
+        totalSum += currentNum;
+    }
+    cout << "Ans=" << totalSum << endl;
+    return 0;
+}
