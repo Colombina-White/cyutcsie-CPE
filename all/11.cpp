@@ -30,3 +30,41 @@ int main() {
     cout << "Ans=" << (ok && st.empty() ? "CORRECT" : "ERROR") << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("11.txt");
+    char s[1000];
+    if (!(f >> s)) return 0;
+    cout << s << endl;
+    char st[1000];
+    int top = -1; 
+    bool ok = true;
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        char c = s[i];
+        if (c == '(' || c == '[' || c == '{') {
+            st[++top] = c;
+        } 
+        else {
+            if (top == -1) { ok = false; break; }
+
+            if ((c == ')' && st[top] == '(') || 
+                (c == ']' && st[top] == '[') || 
+                (c == '}' && st[top] == '{')) {
+                top--;
+            } else {
+                ok = false;
+                break;
+            }
+        }
+    }
+    if (ok && top == -1) cout << "Ans=CORRECT" << endl;
+    else cout << "Ans=ERROR" << endl;
+
+    return 0;
+}
