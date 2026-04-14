@@ -1,4 +1,11 @@
 //異常值
+/*逗號處理：
+if (s.at(s.length() - 1) == ',') s.erase(s.length() - 1);
+將數據讀取為字串，檢查最後一個字元是否為逗號，若是則移除。這讓它能處理 1.2, 3.4, 5.6 這種格式。
+
+使用 pow(x, 2) 計算平方，使用 sqrt(x) 計算平方根，使用 fabs(x) 取絕對值。
+
+動態存儲：使用 vector<double>，不需要預設資料筆數。*/
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -39,6 +46,12 @@ int main() {
     return 0;
 }
 //不用函示
+/*流處理優化：
+if (f.peek() == ',') { f.ignore(); }
+它利用 f.ignore() 直接跳過檔案中的逗號。
+避開開根號運算：
+判定異常時，比較的是「離差平方」與「變異數」：diff * diff > sigmaSquared。
+在數學上，a > b <=> a^2 > b^2$（當 a, b >= 0）。*/
 #include <iostream>
 #include <fstream>
 
