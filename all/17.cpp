@@ -30,3 +30,40 @@ int main() {
     cout << "Ans=" << setprecision(2) << mid * 100 << "%" << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream file("17.txt");
+    double P, target, low = 0, high = 1, mid;
+    int n;
+    if (!(file >> P >> n >> target)) return 0;
+
+    cout << P << "\n" << n << "\n" << target << endl;
+
+    for (int i = 0; i < 100; i++) {
+        mid = (low + high) / 2.0;
+        double total = 0;
+        for (int j = 0; j < n; j++) {
+            total = (total + P) * (1.0 + mid);
+        }
+        if (total < target) low = mid;
+        else high = mid;
+    }
+
+    double ans = mid * 100;
+    int iPart = (int)ans;                  
+    int dPart = (int)((ans - iPart) * 100 + 0.5);  
+    if (dPart >= 100) {
+        iPart++;
+        dPart = 0;
+    }
+    cout << "Ans=" << iPart << ".";
+    if (dPart < 10) cout << "0";
+    cout << dPart << "%" << endl;
+
+    return 0;
+}
