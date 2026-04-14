@@ -1,4 +1,9 @@
 //中值濾波演算法
+/*動態存儲：使用 vector<int> 存儲原始數據 nums 與結果 res。
+快速排序：使用 std::sort(win.begin(), win.end())。這在視窗很大時效率較好。
+中值選取：直接透過索引 win[k / 2] 取得。
+例如 k=3，索引為 3/2 = 1（第 2 個數）。
+例如 k=5，索引為 5/2 = 2（第 3 個數）。*/
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -38,6 +43,15 @@ int main() {
     return 0;
 }
 //不用函示
+/*
+    氣泡排序 
+    for (int x = 0; x < k - 1; x++) {
+        for (int y = 0; y < k - x - 1; y++) {
+            if (win[y] > win[y + 1]) { // 交換邏輯 }
+        }
+    }
+這是在不使用 std::sort 的情況下，最簡單直覺的排序方法，適合處理 k 值較小的情況。
+靜態陣列：使用固定大小的 nums[1000] 與 win[100]。*/
 #include <iostream>
 #include <fstream>
 
