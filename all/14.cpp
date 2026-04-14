@@ -38,3 +38,47 @@ int main() {
     cout << "Ans=" << ans << endl;
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("14.txt");
+    double v[1000]; 
+    double val, sum = 0;
+    int n = 0;
+    while (f >> val) {
+        v[n++] = val;
+        sum += val;
+        
+        cout << val;
+        
+        if (f.peek() == ',') {
+            cout << ", ";
+            f.ignore();
+        }
+    }
+    cout << endl;
+    if (n == 0) return 0;
+
+    double avg = sum / n;
+    double varSum = 0;
+    for (int i = 0; i < n; i++) {
+        double diff = v[i] - avg;
+        varSum += diff * diff;
+    }
+    double sigmaSquared = varSum / n;
+
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        double diff = v[i] - avg;
+        if (diff * diff > sigmaSquared) {
+            ans++;
+        }
+    }
+
+    cout << "Ans=" << ans << endl;
+    return 0;
+}
