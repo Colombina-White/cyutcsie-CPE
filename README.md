@@ -362,6 +362,28 @@ c2 記錄 s2 中沒配對成功的字元頻率。
 mode == 0：升序排序 (Ascending Order)，結果如 1, 2, 3...
 
 mode == 1：降序排序 (Descending Order)，結果如 3, 2, 1...
+# 24.cpp - 圓周率的無窮乘積計算式
+# 核心數學邏輯
+這段程式碼的核心在於如何決定「分母」：
+
+尋找質數 $p$：從 3 開始（跳過 2，因為 2 不符合此乘積規律）。
+
+判定規則：
+
+如果 $(p-1)$ 不是 4 的倍數 $\rightarrow$ 分母為 $p-1$。
+
+如果 $(p-1)$ 是 4 的倍數 $\rightarrow$ 分母為 $p+1$。
+
+這對應於以下數列構造：
+$p = 3 \rightarrow (3-1=2)$ 不是 4 的倍數 $\rightarrow$ 分數為 $\frac{3}{2}$
+
+$p = 5 \rightarrow (5-1=4)$ 是 4 的倍數 $\rightarrow$ 分數為 $\frac{5}{6}$
+
+$p = 7 \rightarrow (7-1=6)$ 不是 4 的倍數 $\rightarrow$ 分數為 $\frac{7}{6}$
+
+$p = 11 \rightarrow (11-1=10)$ 不是 4 的倍數 $\rightarrow$ 分數為 $\frac{11}{10}$
+
+根據數學原理，這樣的乘積 $\frac{3}{2} \cdot \frac{5}{6} \cdot \frac{7}{6} \cdot \frac{11}{10} \dots$ 會收斂到與 $\pi$ 相關的數值（通常與 $\frac{\pi}{4}$ 或 $\frac{\pi}{2}$ 的萊布尼茨公式項有關）。
 # PDF對照cpp檔案為1>1.cpp
 # 從6.cpp開始請把對照組題目+1
 7.cpp>pdf第六題
