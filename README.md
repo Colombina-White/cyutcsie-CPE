@@ -384,6 +384,12 @@ $p = 7 \rightarrow (7-1=6)$ 不是 4 的倍數 $\rightarrow$ 分數為 $\frac{7}
 $p = 11 \rightarrow (11-1=10)$ 不是 4 的倍數 $\rightarrow$ 分數為 $\frac{11}{10}$
 
 根據數學原理，這樣的乘積 $\frac{3}{2} \cdot \frac{5}{6} \cdot \frac{7}{6} \cdot \frac{11}{10} \dots$ 會收斂到與 $\pi$ 相關的數值（通常與 $\frac{\pi}{4}$ 或 $\frac{\pi}{2}$ 的萊布尼茨公式項有關）。
+# 25.cpp - 兩個數字x及n後計算下面運算式的結果
+# 核心數學公式
+這段程式碼計算的數列邏輯如下：$$Sum = \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots + \frac{x^n}{n!}$$
+
+這是 $e^x$ 展開式 $\sum_{k=0}^{\infty} \frac{x^k}{k!}$ 的一部分。
+
 # PDF對照cpp檔案為1>1.cpp
 # 從6.cpp開始請把對照組題目+1
 7.cpp>pdf第六題
