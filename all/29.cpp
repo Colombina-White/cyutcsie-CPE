@@ -67,3 +67,82 @@ int main() {
 
     return 0;
 }
+//不用函示
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream f("29.txt");
+    int groups;
+    if (!(f >> groups)) return 0;
+
+    cout << groups << endl;
+
+    // 儲存每一組結果的整數陣列
+    int resScores[100];
+    bool resFail[100];
+    int count = 0;
+
+    // 跳過第一行後的換行符
+    while (f.peek() == '\n' || f.peek() == '\r') f.ignore();
+
+    for (int g = 0; g < groups; g++) {
+        char m[50]; // 儲存該組的投球紀錄
+        int n = 0;
+        char c;
+        // 手動讀取一行中的所有字元直到換行 (取代 getline + stringstream)
+        while (f.get(c) && c != '\n' && c != '\r') {
+            if (c != ' ') {
+                m[n++] = c;
+            }
+        }
+        // 印出原始內容
+        for (int i = 0; i < n; i++) cout << m[i] << (i == n - 1 ? "" : " ");
+        cout << endl;
+        int score = 0;
+        bool fail = false;
+        for (int i = 0; i < n; i++) {
+            if (m[i] == 'X') { // 全倒
+                if (i + 2 < n) {
+                    // 計算接下來兩球的分數 (手動取代 getS)
+                    int b1 = (m[i+1] == 'X') ? 10 : (m[i+1] - '0');
+                    int b2;
+                    if (m[i+2] == 'X') b2 = 10;
+                    else if (m[i+2] == '/') b2 = 10 - b1;
+                    else b2 = m[i+2] - '0';
+                    
+                    score += 10 + b1 + b2;
+                } else { fail = true; break; }
+            } 
+            else if (m[i] == '/') { // 補中
+                if (i + 1 < n) {
+                    int prev = m[i-1] - '0';
+                    int next = (m[i+1] == 'X') ? 10 : (m[i+1] - '0');
+                    score += (10 - prev) + next;
+                } else { fail = true; break; }
+            } 
+            else { // 普通數字球
+                score += (m[i] - '0');
+            }
+        }
+        resScores[count] = score;
+        resFail[count] = fail;
+        count++;
+
+        // 處理 Windows/Unix 換行符
+        if (f.peek() == '\n' || f.peek() == '\r') f.ignore();
+    }
+    // 輸出最後結果
+    cout << "Ans=";
+    for (int i = 0; i < count; i++) {
+        if (resFail[i]) cout << "Unknown";
+        else cout << resScores[i];
+        
+        if (i < count - 1) cout << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
